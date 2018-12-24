@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { DataService } from '../../services/data.service';
 
 @Component({
@@ -8,14 +8,35 @@ import { DataService } from '../../services/data.service';
 })
 export class MainComponent implements OnInit {
 
-  location : string = "London,uk";
+  location : string ;
+  temp : number ;
+  location_temp : string;
+  outputDivVisible: boolean;
 
   constructor(private ds:DataService) { 
     
   }
 
   ngOnInit() {
-    this.ds.getTemp(this.location);
+    // not in here
+    // this.ds.getTemp(this.location).subscribe(data => {
+    //   console.log(data);
+    //   this.temp = data.main.temp;
+
+    // });
+  }
+
+  onClick() {
+    this.ds.getTemp(this.location).subscribe(data => {
+      console.log(data);
+      this.temp = data.main.temp;
+      this.outputDivVisible = true;
+      this.location_temp = this.location;
+      this.location = " ";
+    });
+   
+    
+    
   }
 
 }
