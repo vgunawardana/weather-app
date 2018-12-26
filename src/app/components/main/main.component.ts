@@ -34,9 +34,10 @@ export class MainComponent implements OnInit {
       this.location_temp = this.location;
       this.location = " ";
     });
-   
-    
-    
-  }
+   }
+
+   onFocus(){
+     this.outputDivVisible = false;
+   }
 
 }

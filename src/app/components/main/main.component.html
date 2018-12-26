@@ -9,7 +9,7 @@
               <label for="locationInput">Location :</label>
               <div class="row justify-content-between">
                 <div class="col-md-9">
-                    <input type="text" class="form-control" id="locationInput" [(ngModel)]="location" name="location" placeholder="Enter your intended place ..."/>
+                    <input type="text" class="form-control" id="locationInput" [(ngModel)]="location" name="location" placeholder="Enter your intended place ..." (focus)="onFocus()"/>
                 </div>
                 <div class="col ">
                     <button type="submit" class="btn btn-primary btn-block" (click)="onClick()">Submit</button>

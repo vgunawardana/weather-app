@@ -16,7 +16,7 @@ export class DataService {
 
   public getTemp(city:string):Observable <any>{
 
-    return  this.http.get('http://api.openweathermap.org/data/2.5/weather?q='+city+'&appid=21351d1a1903dd7a8365b27722a5d610');
+    return  this.http.get('http://api.openweathermap.org/data/2.5/weather?q='+city+'&units=metric&appid=21351d1a1903dd7a8365b27722a5d610');
 
     //console.log("Accessing OpenWeatherAPI");
   //  return  this.http.get("http://api.openweathermap.org/data/2.5/weather?q="+city+"&appid=21351d1a1903dd7a8365b27722a5d610").map(res=> {
